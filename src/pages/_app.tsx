@@ -1,6 +1,12 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+
+import '@interchain-ui/react/styles';
+import { ThemeProvider } from '@interchain-ui/react';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider defaultTheme='light'>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
